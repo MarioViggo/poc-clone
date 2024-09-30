@@ -17,6 +17,7 @@ const upload = multer({ dest: 'cadastrarProduto/' });
 const maxFotos = 3;
 require('./mongodb');
 var cors = require('cors');
+console.log("============:>", process.env.MONGOURI)
 app.use(cors());
 app.use(bodyParser({limit: '50mb'}));
 //app.use(multer().single('codigo_de_barras'))
