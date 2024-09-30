@@ -3,17 +3,18 @@ const mongoose = require('mongoose')
 
 exports.cadastrarProduto = async (req, res) => {
     const { descricao, codigo_sequencial, status, estoque, valor } = req.body
-    const { imagens, codigo_de_barras } = req.files
     let imagem_list = []
-    for (imagem of imagens) {
-        imagem_list.push(imagem.buffer)
+    if (req.body.imagens) {
+        for (imagem of req.body.imagens) {
+            imagem_list.push(imagem.buffer)
+        }
     }
 
     try {
         const produto = new produtoModel({
             descricao: descricao != "undefined" ? descricao : oldProduto.descricao,
             codigo_sequencial: codigo_sequencial != "undefined" ? codigo_sequencial : oldProduto.codigo_sequencial,
-            codigo_de_barras: codigo_de_barras ? codigo_de_barras[0].buffer : oldProduto.codigo_de_barras,
+            codigo_de_barras: req.body.codigo_de_barras ? req.body.codigo_de_barras[0].buffer : oldProduto.codigo_de_barras,
             status: status != "undefined" ? status : (estoque > 0 ? 'ativo' : oldProduto.status),
             estoque: estoque != "undefined" ? parseInt(estoque) : parseInt(oldProduto.estoque),
             valor: valor != "undefined" ? valor : oldProduto.valor,
