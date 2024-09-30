@@ -1,0 +1,16 @@
+{
+    "produtos": [
+      {
+        "id": 1,
+        "descricao": "Uva roxa KG",
+        "codigo_sequencial": "40028922",
+        "valor": 4
+      },
+      {
+        "id": 2,
+        "descricao": "Queijo de Manteiga KG",
+        "codigo_sequencial": "58489595",
+        "valor": 35
+      }
+    ]
+  }

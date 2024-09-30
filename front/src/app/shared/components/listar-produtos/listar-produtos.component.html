@@ -1,0 +1,83 @@
+<div class="loading-bar" *ngIf="show === false">
+  <button #buttonClick class=".teste" (click)="displayPage()">aaaaaaaaa</button>
+  <mat-progress-bar  mode="query"></mat-progress-bar>
+</div>
+<div *ngIf="show === true" class="father-card">
+  <div class="pesquisar-produto">
+    <input id="pesquisa-input" [(ngModel)]="pesquisaInput" name="email" (ngModelChange)="filtrarProdutos($event)" matInput placeholder="Pesquisar Produto" value="">
+  </div>
+  <h2>Produtos</h2>
+</div>
+<div class="container">
+</div>
+  <div *ngIf="show === true"  class="produtos-card-group">
+    <mat-card class="produto-card">
+      <mat-grid-list cols="1" rowHeight="380px" [gutterSize]="'20px'">
+       <mat-grid-tile   *ngFor="let produto of produtos">  
+          <div>
+          <div class="produto-item"><div class="produto-item-title">Código Sequencial:</div> <div class="item-value">{{ produto.codigo_sequencial }}</div></div>
+          <div class="produto-item"><div class="produto-item-title">Descrição:</div>  <div class="item-value" >{{ produto.descricao }}</div></div>
+          <div class="produto-item"><div class="produto-item-title">Valor:</div> <div class="item-value">{{ produto.valor }}</div></div>
+          <div class="produto-item"><div class="produto-item-title">Status:</div> <div class="item-value">{{ produto.status }}</div></div>
+          <div class="produto-item"><div class="produto-item-title">Estoque:</div> <div class="item-value">{{ produto.estoque }}</div></div>
+          <button mat-raised-button color="primary" (click)="editarProduto(produto)">Editar Produto</button>
+          <button mat-raised-button color="warn" *ngIf="produto.status == 'ativo'" (click)="desativarProduto(produto._id)">Desativar Produto</button>
+          <button mat-raised-button color="success" *ngIf="produto.status == 'inativo'" (click)="ativarProduto(produto._id)">Ativar Produto</button>
+           <img class="produto-item" id="codigo_de_barras"  [src]="codigo_de_barras"/>
+          </div>   
+          <div class="carousel">
+          
+      <p-carousel [value]="produto.imagens_loaded"  [autoplayInterval]="2000" [circular]="true" [numVisible]="1" [numScroll]="1">
+        <ng-template pTemplate="header">
+        </ng-template>
+        <ng-template let-imagem pTemplate="item">
+          <img class="imgs" [src]="imagem"/>
+          <div class="car-buttons mt-5">
+
+        </div>
+        </ng-template>
+      </p-carousel>
+                </div>
+        </mat-grid-tile> 
+      </mat-grid-list>   
+    </mat-card>
+    <div class="father-mobile">
+      <mat-card class="produto-card-mobile">
+        <mat-grid-list cols="1" rowHeight="380px" [gutterSize]="'20px'">
+         <mat-grid-tile   *ngFor="let produto of produtos">   
+            <div> 
+              <div class="produto-item"><b>Código Sequencial: </b>
+               {{ produto.codigo_sequencial }}</div>
+               <div class="produto-item"><b>Descrição: </b>
+                {{ produto.descricao }}</div> 
+                <div class="produto-item"><b>Valor: </b>
+                  {{ produto.valor }}</div>
+                  <div class="produto-item"><b>Estoque: </b>
+                    {{ produto.estoque }}</div>
+              
+              <button mat-raised-button color="primary" (click)="editarProduto(produto)">Editar Produto</button>
+              <button mat-raised-button color="warn" (click)="desativarProduto(produto._id)">Deletar Produto</button>
+               <div class="carousel">
+                <p-carousel [value]="produto.imagens_loaded"  [autoplayInterval]="2000" [circular]="true" [numVisible]="1" [numScroll]="1">
+                    <ng-template pTemplate="header">
+                    </ng-template>
+                    <ng-template let-imagem pTemplate="item">
+                      <img class="imgs" [src]="imagem"/>
+                      <div class="car-buttons mt-5">
+            
+                    </div>
+                    </ng-template>
+                </p-carousel>
+     
+                     </div>
+            </div>
+         <!--   <div class="container">
+              <div class="img-list" *ngFor="let imagem of produto.imagens_loaded"> 
+                  <img class="imgs" [src]="imagem"/>
+              </div>  
+            </div>-->
+          </mat-grid-tile> 
+        </mat-grid-list>   
+      </mat-card>
+    </div>
+  </div>

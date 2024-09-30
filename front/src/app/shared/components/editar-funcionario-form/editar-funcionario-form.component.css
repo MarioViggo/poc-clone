@@ -1,0 +1,124 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+:host {
+      padding-top: 34px;
+      padding-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 4%;
+      text-align: center;
+      min-height: 500px;
+      width: 60%;
+      margin: 0 auto;
+      -webkit-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+      -moz-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+      box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+}
+    
+mat-form-field {
+    width: 50%;
+    height: 55px;
+    margin: 6px auto;
+    border-radius: 8px;
+}
+
+.error-warn {
+    color: red;
+}
+
+input {
+    margin-top: 14px;
+    border-radius: 8px;
+}
+button {
+    width: 30%;
+    margin: 0 auto;
+}
+    
+button:hover {
+    background-color: rgb(248, 245, 245);
+    -webkit-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+    -moz-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+    box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+}
+  
+
+@media all and (max-width: 1080px) {
+    :host {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 4%;
+        text-align: center;
+        min-height: 500px;
+        width: 60%;
+        margin: 0 auto;
+        -webkit-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+        -moz-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+        box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+  }
+      
+  mat-form-field {
+      width: 70%;
+      margin: 0 auto;
+  }
+      
+  button {
+      width: 30%;
+      margin: 0 auto;
+  }
+      
+  button:hover {
+      background-color: rgb(248, 245, 245);
+      -webkit-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+      -moz-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+      box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+  }
+    
+  }
+
+  @media all and (max-width: 600px) {
+    :host {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 4%;
+        text-align: center;
+        min-height: 350px;
+        width: 60%;
+        margin: 0 auto;
+        -webkit-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+        -moz-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+        box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+  }
+      
+  mat-form-field {
+      width: 70%;
+      margin: 0 auto;
+  }
+      
+  button {
+      width: 30%;
+      margin: 0 auto;
+  }
+      
+  button:hover {
+      background-color: rgb(248, 245, 245);
+      -webkit-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+      -moz-box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+      box-shadow: 9px 7px 31px 4px rgba(0,0,0,0.47);
+  }
+    
+  }

@@ -1,0 +1,17 @@
+<div class="class">
+    <h1><b>Produtos:</b></h1>
+    <div class="form-group">
+    </div>
+    <ul *ngFor="let produto of vendaProdutos">
+      <li><b>ID:</b> {{ produto._id }}</li>
+      <li> <b>Descrição:</b> {{ produto.produto.descricao }}</li>
+      <li> <b>Código Sequencial:</b> {{ produto.produto.codigo_sequencial }}</li>
+      <li> <b>Valor:</b> {{ produto.produto.valor }}</li>
+      <li> <b>Quantidade:</b> {{ produto.quantidade }}</li>
+      <li> <b>Estoque:</b> {{ produto.produto.estoque }}</li>
+      <button mat-raised-button color="primary" (click)="removerProduto(produto)">Remover Produto</button>
+    </ul>
+    <br />
+
+   
+  </div>

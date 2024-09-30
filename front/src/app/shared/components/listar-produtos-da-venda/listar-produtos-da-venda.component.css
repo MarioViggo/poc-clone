@@ -1,0 +1,69 @@
+.class {
+    border: 2px solid;
+    border-radius: 7px;
+    margin-top: 14px;
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: scroll;
+    text-align: center;
+    padding-left: 34px;
+  
+}
+
+.teste {
+    visibility: hidden;
+}
+
+img {
+    width: 50%;
+}
+.loading-bar {
+    width: 80%;
+    margin: 160px auto;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+}
+
+.produto-lista {
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 821px) {
+    :host {
+        .p-dialog-mask {
+            align-items:start;
+            margin-top: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 820px) and (min-width: 415px) {
+    :host {
+        .p-dialog-mask {
+            align-items:start;
+            margin-top: 200px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 414px) {
+    :host {
+        .p-dialog-mask {
+            align-items:start;
+            margin-top: 200px;
+        }
+    }
+    p-carousel img{
+        min-height: 100%;
+        width: 80%;
+        border-radius: 8px;
+
+    }
+}

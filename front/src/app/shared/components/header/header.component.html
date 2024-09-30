@@ -1,0 +1,26 @@
+
+  <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon"  [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+          <mat-menu #menu="matMenu">
+             <div  routerLink="/login" ><button *ngIf="isAuthenticated !== true" mat-menu-item>Login</button></div> 
+             <div *ngIf="isAuthenticated !== false"  routerLink="/listar-produtos" ><button mat-menu-item>Listar Produtos</button></div> 
+             <div  *ngIf="isAuthenticated !== false" routerLink="/listar-vendas" ><button mat-menu-item>Listar Vendas</button></div> 
+             <div *ngIf="isAuthenticated !== false" routerLink="/iniciar-compra" ><button mat-menu-item>Nova Venda</button></div> 
+             <div  *ngIf="adminLogged == true" routerLink="/cadastrar-funcionario" ><button mat-menu-item>Cadastrar Funcionário</button></div> 
+             <div  *ngIf="adminLogged == true"  routerLink="/listar-usuarios" ><button mat-menu-item>Listar Usuários</button></div> 
+             <div  *ngIf="adminLogged == true" routerLink="/cadastrar-produto" ><button mat-menu-item>Cadastrar Produto</button></div> 
+             <button *ngIf="isAuthenticated !== false" mat-menu-item (click)="logout()">Log Out</button>
+            </mat-menu>
+        </button>
+        <span>vCaixa</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar>
+<router-outlet class="aa">
+</router-outlet>

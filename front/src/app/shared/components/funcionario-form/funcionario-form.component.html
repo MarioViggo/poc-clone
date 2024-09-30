@@ -1,0 +1,38 @@
+<form [formGroup]="form">
+  <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input type="text" formControlName="nome" name="nome" class="loginInput" matInput>
+    </mat-form-field>
+    <div class="error-warn" *ngIf="formValidators.nome?.hasError('minlength')">
+      O Nome deve conter pelo menos 3 caracteres!
+    </div> 
+  <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input type="text" formControlName="email" name="email" class="loginInput" matInput>
+    </mat-form-field>
+    <div class="error-warn" *ngIf="formValidators.email?.hasError('email')">
+      O E-mail inserido não é válido.
+    </div> 
+    <mat-form-field appearance="fill">
+      <mat-label>Nickname</mat-label>
+      <input formControlName="nickname" name="nickname" type="text" class="loginInput" matInput>
+    </mat-form-field>
+    <div class="error-warn" *ngIf="formValidators.nickname.hasError('minlength')">
+      O Nickname deve conter pelo menos 3 caracteres!
+    </div> 
+    <mat-form-field appearance="fill">
+      <mat-label>Documento</mat-label>
+      <input formControlName="documento" mask="000.000.000-00" name="documento" type="text" class="loginInput" matInput>
+    </mat-form-field>
+    <div class="error-warn" *ngIf="formValidators.documento?.hasError('cpfInvalido')">
+      O CPF inserido não é válido.
+    </div> 
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input formControlName="senha" name="senha" type="password" class="loginInput" matInput>
+    </mat-form-field>
+    <div class="error-warn" *ngIf="formValidators.senha?.hasError('minlength')">
+      A Senha deve conter pelo menos 8 caracteres!
+    </div> 
+  <button [disabled]="!form.valid" (click)="registrarFuncionario()" mat-raised-button>Cadastrar Funcionário</button>
+</form>
