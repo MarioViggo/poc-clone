@@ -1,6 +1,6 @@
 services:
 - type: web
-  name: line-bot-nodejs-echo
+  name: vCaixa
   env: node
   repo: https://github.com/MarioViggo/poc-clone
   buildCommand: yarn install && yarn add request && git clone https://github.com/pagarme/pagarme-core-api-nodejs.git ./node_modules/pagarme-core-api-nodejs
