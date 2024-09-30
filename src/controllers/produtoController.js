@@ -12,12 +12,12 @@ exports.cadastrarProduto = async (req, res) => {
 
     try {
         const produto = new produtoModel({
-            descricao: descricao != "undefined" ? descricao : oldProduto.descricao,
-            codigo_sequencial: codigo_sequencial != "undefined" ? codigo_sequencial : oldProduto.codigo_sequencial,
-            codigo_de_barras: req.body.codigo_de_barras ? req.body.codigo_de_barras[0].buffer : oldProduto.codigo_de_barras,
-            status: status != "undefined" ? status : (estoque > 0 ? 'ativo' : oldProduto.status),
-            estoque: estoque != "undefined" ? parseInt(estoque) : parseInt(oldProduto.estoque),
-            valor: valor != "undefined" ? valor : oldProduto.valor,
+            descricao: descricao,
+            codigo_sequencial: codigo_sequencial,
+            codigo_de_barras: req.body.codigo_de_barras ? req.body.codigo_de_barras[0].buffer : [],
+            status: estoque > 0 ? 'ativo' : 'inativo',
+            estoque:  parseInt(estoque),
+            valor:  valor,
             imagens: imagem_list.length > 0 ? imagem_list : oldProduto.imagens
 
         })
