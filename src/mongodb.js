@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-let server = process.env.MONGO_URI
+let server = process.env.MONGOURI
 
 let database = "initial"
 
