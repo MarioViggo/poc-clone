@@ -3,7 +3,7 @@ services:
   name: line-bot-nodejs-echo
   env: node
   repo: https://github.com/MarioViggo/poc-clone
-  buildCommand: yarn install && yarn add request && git clone https://github.com/pagarme/pagarme-core-api-nodejs.git ./node_modules/pagarme-core-api-nodejs && yarn build
+  buildCommand: yarn install && yarn add request && git clone https://github.com/pagarme/pagarme-core-api-nodejs.git ./node_modules/pagarme-core-api-nodejs
   startCommand: yarn start
   plan: free
   autoDeploy: false
