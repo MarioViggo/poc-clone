@@ -18,7 +18,7 @@ exports.cadastrarProduto = async (req, res) => {
             status: estoque > 0 ? 'ativo' : 'inativo',
             estoque:  parseInt(estoque),
             valor:  valor,
-            imagens: imagem_list.length > 0 ? imagem_list : oldProduto.imagens
+            imagens: imagem_list.length > 0 ? imagem_list : []
 
         })
 
