@@ -66,7 +66,7 @@ exports.editarProduto = async (req, res) => {
     const oldProduto = await produtoModel.findOne({ descricao: descricao })
     try {
         const produto = await produtoModel.findOneAndUpdate(
-            { _id: new mongoose.Types.ObjectId(produtoId) },
+            { descricao: descricao },
             {
                 descricao: descricao != "undefined" ? descricao : oldProduto.descricao,
                 codigo_sequencial: codigo_sequencial != "undefined" ? codigo_sequencial : oldProduto.codigo_sequencial,
