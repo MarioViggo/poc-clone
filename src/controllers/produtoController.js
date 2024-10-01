@@ -53,7 +53,7 @@ exports.subtrairEstoque = async (req, res) => {
 };
 
 exports.editarProduto = async (req, res) => {
-    const { produtoId } = req.params
+    //const { produtoId } = req.params
     const { descricao, codigo_sequencial, status, estoque, valor } = req.body
     const { imagens, codigo_de_barras } = req.files
     console.log(req.body)
@@ -64,7 +64,7 @@ exports.editarProduto = async (req, res) => {
             imagem_list.push(imagem.buffer)
         }
     }
-    const oldProduto = await produtoModel.findOne({ _id: new mongoose.Types.ObjectId(produtoId) })
+    const oldProduto = await produtoModel.findOne({ descricao: descricao })
     try {
         const produto = await produtoModel.findOneAndUpdate(
             { _id: new mongoose.Types.ObjectId(produtoId) },
