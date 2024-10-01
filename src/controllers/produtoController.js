@@ -70,11 +70,11 @@ exports.editarProduto = async (req, res) => {
             {
                 descricao: descricao != "undefined" ? descricao : oldProduto.descricao,
                 codigo_sequencial: codigo_sequencial != "undefined" ? codigo_sequencial : oldProduto.codigo_sequencial,
-                codigo_de_barras: req.body.codigo_de_barras ? req.body.codigo_de_barras[0].buffer : oldProduto.codigo_de_barras,
+              //  codigo_de_barras: req.body.codigo_de_barras ? req.body.codigo_de_barras[0].buffer : oldProduto.codigo_de_barras,
                 status: status != "undefined" ? status : (estoque > 0 ? 'ativo' : oldProduto.status),
                 estoque: estoque != "undefined" ? parseInt(estoque) : parseInt(oldProduto.estoque),
                 valor: valor != "undefined" ? valor : oldProduto.valor,
-                imagens: imagem_list.length > 0 ? imagem_list : oldProduto.imagens
+               // imagens: imagem_list.length > 0 ? imagem_list : oldProduto.imagens
             },
             { new: true }
         )
