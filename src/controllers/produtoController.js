@@ -53,8 +53,8 @@ exports.subtrairEstoque = async (req, res) => {
 };
 
 exports.editarProduto = async (req, res) => {
-    const { produto } = req.params
-    const { descricao, codigo_sequencial, status, estoque, valor } = req.body
+    const { codigo_sequencial } = req.params
+    const { descricao, status, estoque, valor } = req.body
   // console.log(req.body)
 
     let imagem_list = []
@@ -63,10 +63,10 @@ exports.editarProduto = async (req, res) => {
             imagem_list.push(imagem.buffer)
         }
     }
-    const oldProduto = await produtoModel.findOne({ descricao: descricao })
+    const oldProduto = await produtoModel.findOne({ codigo_sequencial: codigo_sequencial })
     try {
         const produto = await produtoModel.findOneAndUpdate(
-            { descricao: descricao },
+            { codigo_sequencial: codigo_sequencial },
             {
                 descricao: descricao != "undefined" ? descricao : oldProduto.descricao,
                 codigo_sequencial: codigo_sequencial != "undefined" ? codigo_sequencial : oldProduto.codigo_sequencial,
