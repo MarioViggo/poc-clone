@@ -55,7 +55,7 @@ exports.subtrairEstoque = async (req, res) => {
 exports.editarProduto = async (req, res) => {
     const { produto } = req.params
     const { descricao, codigo_sequencial, status, estoque, valor } = req.body
-    console.log(req.body)
+  // console.log(req.body)
 
     let imagem_list = []
     if (req.body.imagens) {
@@ -78,6 +78,7 @@ exports.editarProduto = async (req, res) => {
             },
             { new: true }
         )
+        console.log("===========", produto)
         return res.status(201).send(produto);
     } catch (err) {
         console.log(err)
